@@ -1,12 +1,74 @@
-def bubble_sort(array_to_sort):
-    n = len(array_to_sort)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if array_to_sort[j] > array_to_sort[j+1]:
-                array_to_sort[j], array_to_sort[j+1] = array_to_sort[j+1], array_to_sort[j]
-    return array_to_sort
+import itertools
+from itertools import count
 
- array = [64, 34, 25, 12, 22, 11, 90]
-sorted_array = bubble_sort(array)
-print(sorted_array)
+'''
+завдання дано список з елементами різних типів
+'''
 
+
+
+
+
+
+
+
+
+
+zxc ="Hello World"
+name ="Nikita"
+surname ="Sanchenko"
+age =16
+
+print(zxc)
+print(name)
+print(surname)
+print(age)
+
+print(type(name))
+print(type(surname))
+print(type(age))
+
+
+count_int = 0
+count_str = 0
+count_float = 0
+count_set = 0
+count_tuple = 0
+count_bool = 0
+count_list = 0
+count_notnull = []
+max_value = 0
+lst_notnull = []
+lst_count_types = [count_list, count_bool, count_set, count_float, count_tuple, count_str, count_int]
+lst = [name, surname, age]
+lst_name_type = [int, str, str, int, str, str]
+for item in lst:
+    if type(item) == int:
+        lst_count_types[-1] +=1
+    elif type(item) == str:
+        lst_count_types[-2] +=1
+    elif type(item) == tuple:
+        lst_count_types[-3] +=1
+    elif type(item) == float:
+        lst_count_types[-4] +=1
+    elif type(item) == set:
+        lst_count_types[-5] +=1
+    elif type(item) == bool:
+        lst_count_types[-6] +=1
+    elif type(item) == list:
+        lst_count_types[-7] +=1
+for item in lst_count_types:
+    if item !=0:
+        lst_notnull.append(item)
+    if len(lst_notnull) == 1:
+        print('Good')
+    else:
+        if item > max_value:
+            max_value = item
+
+max_value = max(lst_count_types)
+inn = lst_count_types.index(max_value)
+print(lst_name_type[inn])
+for item in lst:
+    if type(item) !=lst_name_type[inn]:
+        lst.remove(item)
