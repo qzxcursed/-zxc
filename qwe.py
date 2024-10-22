@@ -1,19 +1,6 @@
 import itertools
 from itertools import count
 
-'''
-завдання дано список з елементами різних типів
-'''
-
-
-
-
-
-
-
-
-
-
 zxc ="Hello World"
 name ="Nikita"
 surname ="Sanchenko"
